@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Lock Project - Stats Animados</title>
+<style>
+/* -------------------- RESET -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* -------------------- FONDO GIF HUMO -------------------- */
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #fff;
+  position: relative;
+  background: #000;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: url('humo.gif') center/cover no-repeat;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* -------------------- CONTAINER -------------------- */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* -------------------- FICHA PRINCIPAL -------------------- */
+.ficha {
+  background: rgba(0,0,0,0.4);
+  border: 2px solid #0ff;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 50px;
+  text-align: center;
+  box-shadow: 0 0 30px #0ff;
+}
+
+/* IMAGEN ENCIMA DEL TÍTULO */
+.ficha img {
+  width: 200px;
+  border: 5px solid #0ff;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+/* TITULO */
+.ficha h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #0ff;
+  text-shadow: 0 0 15px #0ff, 0 0 30px #0f0;
+}
+
+/* SUBTÍTULO */
+.ficha p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+/* SEPARADOR */
+hr {
+  border:1px solid #0ff;
+  margin:20px 0;
+}
+
+/* -------------------- STATS ANIMADOS -------------------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.stat {
+  background: rgba(0,0,0,0.3);
+  border: 2px solid #0ff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.3s;
+}
+
+.stat:hover {
+  transform: scale(1.1);
+}
+
+.stat h2 {
+  font-size: 3rem;
+  color: #0ff;
+  animation: glow 2s infinite alternate;
+}
+
+.stat p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* -------------------- GLOW ANIMATION -------------------- */
+@keyframes glow {
+  0% {text-shadow: 0 0 10px #0ff, 0 0 20px #0f0;}
+  50% {text-shadow: 0 0 20px #0ff, 0 0 40px #0f0;}
+  100% {text-shadow: 0 0 10px #0ff, 0 0 20px #0f0;}
+}
+
+/* -------------------- COLUMNAS PASIVAS -------------------- */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.column {
+  background: rgba(0,0,0,0.3);
+  flex: 1 1 300px;
+  border: 2px solid #0ff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px #0f0;
+  transition: transform 0.3s;
+}
+
+.column:hover {
+  transform: scale(1.05);
+}
+
+.column img {
+  width: 40%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.column h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0ff;
+}
+
+.column p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+  white-space: pre-wrap; /* respeta espacios y saltos de línea */
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media(max-width: 768px){
+  .columns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- FICHA PRINCIPAL -->
+  <div class="ficha">
+    <img src="logo.png" alt="Logo Blue Lock">
+    <h1>𝄖 ｡ #BLUE LOCK PROJECT</h1>
+    <p>ᯓ⚽︎ STATS FINAL</p>
+    <p>⟢ Nombre: <b>Otoya Eita</b></p>
+    <p>⟢ Edad: <b>17</b></p>
+    <hr>
+
+    <div class="stats">
+      <div class="stat">
+        <h2>86</h2>
+        <p>Pase</p>
+      </div>
+      <div class="stat">
+        <h2>83</h2>
+        <p>Tiro</p>
+      </div>
+      <div class="stat">
+        <h2>88</h2>
+        <p>Físico</p>
+      </div>
+      <div class="stat">
+        <h2>85</h2>
+        <p>Regate</p>
+      </div>
+      <div class="stat">
+        <h2>105</h2>
+        <p>Defensa</p>
+      </div>
+      <div class="stat">
+        <h2>90</h2>
+        <p>Velocidad</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLUMNAS PASIVAS -->
+  <div class="columns">
+    <div class="column">
+      <img src="reo.png" alt="Reo Mikage U20">
+      <h2>Reo Mikage U20</h2>
+      <p>
+EDICIÓN DE BLUE LOCK ELEVEN VS SUB 20 DE JAPÓN
+
+Estilo y Adaptación del Camaleón de Reo Mikage
+
+Legendario
+
+(Pasiva de Estilo – Pase)
+
+Eres un jugador nacido para adaptarse al entorno que te rodea. Tu talento radica en la versatilidad absoluta, capaz de ocupar cualquier zona del campo con total soltura, analizando cada jugada con tu conciencia espacial y traduciéndose en decisiones efectivas que elevan la fluidez del equipo. No importa si es defensa, centrocampista o delantero, todo se te da bien. Gracias a tu visión de campo avanzada y lectura del juego, tus estadísticas base se ven potenciadas por una conciencia espacial otorgando un aumento pasivo de +5 puntos en todas tus estadísticas. Tu control del juego te permite distribuir y desequilibrar con precisión quirúrgica, por lo que Pase y Regate se ven aumentados en +11 puntos inicialmente. Tiro, Defensa, Físico y Velocidad se ven aumentados en +8 puntos. Como efecto acumulable, cada vez que venzas en un duelo (con o sin ruleta), Pase y Regate aumentan en +6 puntos hasta 3 veces. Además, reduces -13 puntos en defensa enemiga en encuentros de Pase vs Defensa y Regate vs Defensa una vez ganes la acumulable máximo. Tus pases pueden tomar curvatura libre sin alterar su precisión, y al ejecutar pases a larga distancia, solo sufres un 35% de reducción por distancia, a diferencia del 50% convencional. Pero lo que te vuelve verdaderamente letal es tu capacidad de replicar jugadas ajenas: Tienes la habilidad de copiar cualquier jugada de otro jugador dentro del campo (ya sea una jugada de Genio, de alto rendimiento o estilo único) y reproducirla perfectamente, ganando +5 puntos en la estadística central que la jugada representa (ya sea Pase, Tiro, Defensa, Regate, Físico o Velocidad). Este aumento permanece indefinidamente, pero no puedes volver a replicar una jugada para seguir acumulando la misma estadística. Sin embargo, puedes repetir el proceso en otra categoría distinta (por ejemplo, primero en Tiro, luego en Defensa). Aunque tu capacidad de réplica tiene sus límites: no puedes copiar pasivas ni jugadas exclusivas de jugadores del New Gen Eleven, tampoco de Físico ni Velocidad. Sin embargo, tienes la capacidad para adaptarte al estilo salvaje y explosivo del demonio Ryusei Shidou, la técnica precisa y control absoluto de Seishiro Nagi, así como las capacidades defensivas de un jugador de categoría primera división como Oliver Aiku.
+
+Camaleón
+
+Una habilidad que representa tu naturaleza adaptable, capaz de cambiar de rol en cualquier momento del partido. Con esta habilidad puedes copiar y utilizar una pasiva activa dentro del campo (ya sea de un aliado o enemigo), manteniéndola sólo durante la jugada (un post). Puedes copiar todo tipo de pasivas, sin importar si son de tipo ofensivo, defensivo o mixtas. Como ventaja única por tu acondicionamiento físico superior, si una pasiva contiene características de Físico o Velocidad a ruletas de riesgo (como probabilidad de lesión), esa ruleta se ajusta automáticamente a 80% de no lesión y 20% de lesión.
+
+Ejecución:
+
+Para activar esta habilidad, debes redactar claramente qué pasiva copias (con nombre y fuente), usarla de forma contextual dentro de tu jugada, y hacer referencia explícita al uso de la habilidad como Camaleón. Tras la ejecución, no tiene cooldown, solo las habilidades de las pasivas que copias respetando su tiempo de enfriamiento de las habilidades usadas.
+
+Gyro Shot – Estilo del Camaleón
+
+Un disparo con efecto que cambia de trayectoria y se caracteriza por su precisión, a pesar de ser un tiro curvo no tan violento comparado a otros con estas características. La elevación que toma aparenta desviarse de la portería aparentando que se va fuera sin embargo desciende repentinamente entrando en la red reduciendo un -8 en la estadística del portero. Si un rival interviene en la trayectoria del tiro es forzado a Tiro vs Defensa con reducción de -20% en la estadística de tu oponente.
+
+Ejecución:
+
+Debes redactar como ejecutas el tiro con efecto que desciende en curva hacía la portería pareciendo que se va fuera, tienes que hacer mención de Gyro Shot – Estilo del Camaleón esperando 7 turnos globales de Cooldown una vez lo uses.
+
+Control Absorbente x Despeje Giratorio – Estilo del Camaleón
+
+Una técnica que redefine lo imposible: convertir un rechazo, un mal pase, o incluso una posición incómoda en una oportunidad brillante. El dominio del cuerpo y la técnica se fusionan para realizar un giro perfecto en el aire o el suelo, conectando con el balón en un disparo/pase giratorio que transforma en control absorbente. Has copiado con maestría el talento inhumano del control perfecto y la improvisación total, mediante esta habilidad anulas el enfrentamiento en un balón suelto, rechace o pase. Mediante un giro técnico, golpeas el balón sin importar el momento logrando mantener la fluidez y precisión de la jugada. Ya sea para asistir o despejar con elegancia, esta técnica convierte el terreno en una plataforma para la creatividad pura. Tu aumenta en +6 puntos en Pase al momento de usar esta habilidad hasta 2 veces como efecto acumulable. La dirección del pase puede adquirir efecto curvado o flotante a los 15m de distancia. Si tu equipo recupera el balón tras tu acción, ganan un bono temporal de +5 en Tiro, Pase y Regate durante esa misma jugada. La defensa que busque interceptar se ven forzados a -20% con duelo Defensa vs Pase.
+
+Ejecución:
+
+Para utilizar Control Absorbente x Despeje Giratorio – Estilo del Camaleón, debes narrar una jugada donde el balón te llegue en un ángulo o situación incómoda y tú, con elegancia y dominio técnico, conectes con él mediante un giro parcial o completo para transformar la situación. La acción puede ser usada como pase o tiro, y se debe hacer mención directa al uso de la habilidad. Una vez usada, la habilidad entra en su cooldown de 7 turnos globales.
+
+Defensa Asfixiante – Estilo Camaleón
+
+Has absorbido el instinto de un defensor que no da respiro. Esta técnica representa el dominio total de la presión corporal y el cierre de espacios al punto de eliminar por completo las rutas del rival. Tu cuerpo se convierte en una serpiente asfixiando su presa como una sombra que persigue y encierra a su presa, obligando a Regate vs Defensa, Tiro Vs Defensa o Defensa vs Pase, depende lo que se requiera el post. No se trata de quitar el balón directamente, sino de sofocar la libertad del atacante: niegas el pase, el giro y el espacio, ejecutando un marcaje tan ajustado que corta el oxígeno de la jugada sin hacer contacto. Tienes +12 puntos en Defensa y +10 en Físico mientras mantengas una marca asfixiante durante el enfrentamiento. Durante este enfrentamiento, si el rival no logra desmarcarse o ejecutar su acción con claridad, se le aplica una reducción de -20 puntos en la estadística que utilice (Regate, Pase o Tiro), siempre que tu narración muestra cómo reducir su margen de ejecución. Si el rival pierde la ruleta forzada de Regate vs Defensa o Pase vs Defensa o Tiro vs Defensa, obtienes un aumento temporal de +6 puntos en Pase o Regate (a elección) para la siguiente jugada ofensiva que realices.
+
+Ejecución:
+
+Para activar Defensa Asfixiante – Estilo Camaleón, tu narración debe reflejar un marcaje pegajoso, constante, sin dejar espacio para respirar. No buscas robar el balón en un solo movimiento, sino presionar con el cuerpo, cerrar líneas, negar la recepción y limitar el accionar del rival. Debe mencionarse el uso de la habilidad y detallar cómo ejecutas la presión. Tras su uso la habilidad entra en cooldown de 7 turnos globales.
+
+Movimiento de flujo
+
+Dragon Drive Shot – Estilo del Camaleón
+
+Este disparo no sigue patrones ni estructura, no es elegante, es salvaje, brutal y completamente egoísta. Una técnica creada por el deseo de romper la red sin importar el método. Mediante tu estilo adaptable, réplicas a la perfección el instinto animal contenido en un disparo inhumano: una patada desmedida donde la violencia y la precisión se combinan en una sola ejecución. Tu cuerpo toma la postura de una bestia, forzando el disparo como si tu pierna fuera una lanza viva. Tus músculos se tensan, tu visión se estrecha, y en ese instante, todo lo que no sea portería deja de existir. Has copiado el estilo ofensivo de una criatura salvaje que no piensa en fallar. Tu Tiro aumenta en +10 puntos al activar esta habilidad. La reducción de la Defensa del rival se reduce en -25% puntos durante el enfrentamiento y es forzado a Tiro vs Defensa.
+
+Ejecución:
+
+Debes hacer mención del uso de la habilidad en un balón que este rechazado o en pleno aire para hacer referencia a Tiro Dragón – Estilo del Camaleón rematando con un disparo feroz. Esta habilidad tiene 8 turnos globales de Cooldown.
+      </p>
+    </div>
+    <div class="column">
+      <img src="karasu.png" alt="Tabito Karasu">
+      <h2>Tabito Karasu</h2>
+      <p>
+Capacidad Analítica y juego de manos de Tabito Karasu:
+
+Legendario
+
+(Pasiva de estilo–Fisico)
+
+Eres un jugador que destaca de los demas por su capacidad analitica y vision del campo. Tienes una visión de juego implacable que te ayuda a recolectar y analizar la información recibida de tu vision horizontal y periférica. Gracias a metavision, todas tus estadísticas se ven aumentadas en +6 y esta ayuda a que puedas analizar de manera más exacta las jugadas de los rivales y en la mejor opción para armar una contra por parte de tu equipo. Tu estilo de juego se basa en ser el corazon de tu equipo y que en tu avance si te ves en casos muy necesarios, usas tus manos para frenar el avance de tus oponentes y así salir de su marca, gracias a esto, tus puntos en físico se ven aumentados en +19. Tienes una excelente habilidad defensiva, apoyas en la defensa de ser necesario y si en dado caso tu equipo inicia la contra, eres el primero en apoyarlos desde el centro, si consigues intervenir en el disparo y salir victorioso en duelo, suma +6 como efecto acumulable hasta 3 veces (18 máximo). Esto hace que tus puntos de defensa y velocidad suban en +16. Tienes buena precisión en tus tiros haciendo de ti, un jugador que de ser necesario puede salir de su posición de mediocampista que puede subir a marcar tus goles o apoyar a tus aliados con pases, haciendo asi que tu tiro y pase se vean aumentado en +14. Tus regates de fintas son casi perfectos, estos ayudan a confundir al rival en caso de necesitar un avance de tu equipo, esto hace que tu regate suba +13 puntos. Cada vez que ganes en duelo ofensivo, tu regate incrementa 7 puntos en acumulable hasta 3 veces (hasta +21 puntos). No pueden rebajar tu capacidad de driblear por otras pasivas que rebajen defensa (las habilidades no cuentan, eso si te afecta) y baja la defensa rival un -18% de buscar frenarlo una vez cumplido la acumulación.
+
+Juego de manos y fintas del cuervo:
+
+Eres un jugador casi implacable en el campo, tu estilo de juego ayuda que si estas avanzando puede frenar el intento de los adversarios de robarte el balón o de confundirlos haciendo fintas. Cuando requieres frenarlos estiras tus brazos y gracias a tu físico los mantienes en su lugar mientras avanzas con tu velocidad. Mientras que si necesitas confundir a tus rivales, tu solo piensas en algun regate de finta que puedas usar, y los aprovechas al maximo para poder avanzar.
+
+Esta habilidad depende de la cantidad de rivales con los que estes en un enfrentamiento, la variedad de estos serian los siguientes:
+
+Enfrentamiento 2vs1: En este tipo de enfrentamiento se tomaría en cuenta el ejemplo del estilo de juego de dos manos y tienes que mandar la referencia de esta jugada. Lo que tienes que hacer es redactar como colocas tus manos en el pecho del rival y mantenerla sin empujar al rival, y alli redactar tu avance sin problema con el balon, y con esto, forzas un duelo físico vs físico contra ambos rivales teniendo un -30% de fisico en reducción.
+
+Enfrentamiento 1vs1: En este duelo, debes mandar una referencia de la jugada y así aprovechas tu capacidad de hacer regates de fintas contra estos, forzando un duelo regate vs defensa, reduciendo la defensa del rival en un -25%.
+
+Ejecución:
+
+Debes redactar los pasos indicados para el requisito y hacer referencia Juego de manos y fintas del cuervo para especificar todo lo indicado mediante los duelos. Además, entrará en cooldown de 6 turnos de enfriamiento luego de usarlo.
+
+Robo del cuervo:
+
+Esta habilidad, es un estilo de robo de balón donde con tu defensa te aproximas a darle un leve toque al balón, y aprovechas para tomarlo y pasarlo al compañero que más cerca tengas de ti. Esta habilidad reduce el regate del oponente un -32% como efecto permanente en el encuentro mientras tu compañero aumentó +9 puntos en la stast que prefiera mejorar para luego del post desaparecer. Además, puedes interceptar el balón o robarlo sin la necesidad de duelo.
+
+Ejecución:
+
+Requiere entrar en duelo y hacer referencia de Robo de cuervo redactar una buena especificación de esto para acto seguido enviar el pase al compañero (en caso de que lo haga). Entrará en cooldown de 7 turnos luego de la utilización de esta habilidad.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
